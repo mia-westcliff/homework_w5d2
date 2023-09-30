@@ -10,8 +10,41 @@
 <script>
     $(document).ready(function() {
        $("#btn").click(function(event){
-
-       });
+        $.getJSON('data.json', function(data) {
+            var tableHtml = '<table>' +
+            '<tr>' +
+            '<th>' + data.heading + '</th>' +
+            '<th>' + data.head1 + '</th>' +
+            '<th>' + data.head2 + '</th>' +
+            '<th>' + data.head3 + '</th>' +
+            '<th>' + data.head4 + '</th>' +
+            '</tr>' +
+            '<tr>' +
+            '<td>' + data.subheadcal + '</td>' +
+            '<td>' + data.cal1 + '</td>' +
+            '<td>' + data.cal2 + '</td>' +
+            '<td>' + data.cal3 + '</td>' +
+            '<td>' + data.cal4 + '</td>' +
+            '</tr>' +
+            '<tr>' +
+            '<td>' + data.subheadfat + '</td>' +
+            '<td>' + data.fat1 + '</td>' +
+            '<td>' + data.fat2 + '</td>' +
+            '<td>' + data.fat3 + '</td>' +
+            '<td>' + data.fat4 + '</td>' +
+            '</tr>' +
+            '<tr>' +
+            '<td>' + data.subheadven + '</td>' +
+            '<td>' + data.ven1 + '</td>' +
+            '<td>' + data.ven2 + '</td>' +
+            '<td>' + data.ven3 + '</td>' +
+            '<td>' + data.ven4 + '</td>' +
+            '</tr>' +
+            '</table>';
+            
+            $('body').append(tableHtml);
+        });
+    });
     });
  </script>
 </head> 	
